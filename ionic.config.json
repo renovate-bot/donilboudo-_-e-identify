@@ -1,0 +1,7 @@
+{
+  "name": "e-identify",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

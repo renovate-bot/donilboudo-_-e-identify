@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button (click)="goBack()"></ion-back-button>
+      </ion-buttons>
+      <ion-title text-center>Détail du visiteur</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+      <ion-item>
+          <ion-label stacked>Nom</ion-label>
+          <ion-input type="text" disabled> {{ visitor?.lastName }} </ion-input>
+      </ion-item>
+    
+      <ion-item>
+          <ion-label stacked>Prénom(s)</ion-label>
+          <ion-input type="text" disabled> {{ visitor?.firstName }} </ion-input>
+      </ion-item>
+    
+      <ion-item>
+          <ion-label stacked>Numéro du document</ion-label>
+          <ion-input type="text" disabled> {{ visitor?.documentNumber }} </ion-input>
+      </ion-item>
+    
+      <ion-item>
+          <ion-label stacked>Commentaire</ion-label>
+          <ion-input type="text" disabled> {{ visitor?.comments }} </ion-input>
+      </ion-item>
+
+      <ion-item>
+            <ion-label stacked>Début de la visite</ion-label>
+            <ion-input type="text" disabled> {{ visitor?.startDate | date :  "medium" }} </ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label stacked>Fin de la visite</ion-label>
+          <ion-input type="text" disabled> {{ visitor?.endDate | date :  "medium" }} </ion-input>
+      </ion-item>
+
+    <ion-button expand="block" (click)="endVisite()" [disabled]="isVisitEnd">
+      Terminer la visite
+    </ion-button>
+  </ion-card>
+</ion-content>

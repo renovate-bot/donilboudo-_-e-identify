@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>Visiteurs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="visitors.length == 0" class="no-visitor">
+      <ion-label text-center>Aucun visiteur pour le moment</ion-label>
+  </div>
+  <ion-card *ngFor="let visitor of visitors" routerLink="/visitor-detail/{{ visitor.id }}">
+    <ion-card-content>
+      Nom & Prénom(s): {{ visitor.firstName }} {{ visitor.lastName }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title text-center>Nouvelle visite</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="createVisitorForm" (submit)="createVisitor()">
+    <ion-item>
+      <ion-label stacked>Nom</ion-label>
+      <ion-input formControlName="lastName" type="text" 
+        placeholder="Quelle est votre nom de famille?">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Prénom(s)</ion-label>
+      <ion-input formControlName="firstName" type="text" 
+        placeholder="Quelle est votre prénom(s)?">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Numéro du document</ion-label>
+      <ion-input formControlName="documentNumber" type="text" 
+        placeholder="Quelle est le numéro du document du visiteur?">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Commentaire</ion-label>
+      <ion-input formControlName="comments" type="text" 
+        placeholder="Avez vous un commentaire?">
+      </ion-input>
+    </ion-item>
+
+    <ion-button class="start-visit" expand="block" type="submit" [disabled]="!createVisitorForm.valid" round>
+        <ion-icon name="play"></ion-icon>
+        Démarrer une visite
+    </ion-button>
+  </form>
+</ion-content>
