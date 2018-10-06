@@ -3,7 +3,6 @@ import { FirestoreService } from '../../services/data/firestore.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { Visitor } from '../../models/visitor.interface';
-import { Observable } from 'rxjs';
 import { DatePipe, Location } from '@angular/common';
 
 @Component({

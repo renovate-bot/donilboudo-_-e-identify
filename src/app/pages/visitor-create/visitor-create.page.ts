@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class VisitorCreatePage implements OnInit {
   public createVisitorForm: FormGroup;
+  documentTypes = ["Carte d'identité", "Passport"];
 
   constructor(
     public loadingCtrl: LoadingController,
@@ -38,11 +39,8 @@ export class VisitorCreatePage implements OnInit {
     {
       comments = '';
     }
-
     let documentNumber = this.createVisitorForm.value.documentNumber;
     let startDate = new Date();
-
-    alert(comments);
 
     this.firestoreService
     .createVisitor(firstName, lastName, documentNumber, comments, startDate)

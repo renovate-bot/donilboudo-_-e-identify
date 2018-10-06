@@ -9,8 +9,10 @@
       <ion-label text-center>Aucun visiteur pour le moment</ion-label>
   </div>
   <ion-card *ngFor="let visitor of visitors" routerLink="/visitor-detail/{{ visitor.id }}">
-    <ion-card-content>
-      Nom & Prénom(s): {{ visitor.firstName }} {{ visitor.lastName }}
-    </ion-card-content>
+    <ion-item>
+        <ion-icon name="walk"></ion-icon>
+        <ion-label stacked>Visiteur:</ion-label>
+        <ion-label text-right class="visitor-name"> {{ visitor.firstName }} {{ visitor.lastName }} </ion-label>
+    </ion-item>
   </ion-card>
 </ion-content>

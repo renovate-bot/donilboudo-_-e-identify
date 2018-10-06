@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FirestoreService } from '../../services/data/firestore.service';
 import { Router } from '@angular/router';
-import { Visitor } from '../../models/visitor.interface';
 
 @Component({
   selector: 'app-visitors',
@@ -17,8 +16,7 @@ export class VisitorsPage {
     this.visitors = [];
     this.firestoreService.getVisitors().valueChanges().subscribe(items => {
       items.forEach(item => {
-        if (!item.endDate)
-        {
+        if (!item.endDate) {
           this.visitors.push(item);
         }
       })
